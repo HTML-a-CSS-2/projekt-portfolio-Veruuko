@@ -1,0 +1,148 @@
+body {
+	background-color: grey;
+}
+
+.stranka {
+	max-width: 1080px;
+	margin: auto;
+	background-color: #fff3f2;
+}
+.hlavicka {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.hlavicka__titulek {
+	color: sandybrown;
+	margin-left: 10px;
+}
+
+.hlavicka__polozka {
+	padding: 5px;
+	margin: 5px;
+	color: salmon;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+.hlavicka__polozka:hover {
+	text-decoration: underline;
+}
+
+.hlavicka__polozka--aktivni {
+	text-decoration: underline;
+	color: rgb(243, 98, 82);
+}
+
+.hero {
+	display: grid;
+}
+
+.hero__obrazek,
+.hero__text {
+	grid-area: 1 / 1 / 1 / 1;
+}
+
+.hero__obrazek {
+	width: 100%;
+}
+
+.hero__text {
+	color: white;
+	text-align: center;
+	margin: 250px 250px 0 250px;
+	font-size: 68px;
+}
+
+.prehled {
+	display: flex;
+	border-top: 1px solid grey;
+	padding: 30px;
+}
+
+.prehled__obsah {
+	flex: auto;
+}
+
+.prehled__titulek {
+	color: palevioletred;
+	font-size: 36px;
+	margin: 0 0 30px 0;
+}
+
+.prehled__titulek--vyhody {
+	text-decoration: underline;
+}
+
+.prehled__titulek--vcem {
+	text-decoration-line: overline;
+}
+
+.prehled__titulek--vybava {
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+.prehled__text {
+	margin: 60px 0 30px;
+}
+
+.prehled__seznam {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0 0 40px 0;
+}
+
+.prehled__seznam--sikonama {
+	list-style-type: none;
+}
+
+.prehled__seznam--ctverecky {
+	list-style-type: square;
+}
+
+.prehled__seznam--podsebou {
+	flex-direction: column;
+}
+
+.prehled__odkaz {
+	color: brown;
+	text-decoration: none;
+}
+
+.prehled__odkaz:hover {
+	text-decoration: underline;
+}
+
+.prehled__foto {
+	max-width: 170px;
+}
+
+.prehled--prohozeny {
+	flex-direction: row-reverse;
+	gap: 30px;
+}
+
+.prehled__ikona {
+	max-width: 30px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.paticka {
+	border-top: 1px solid grey;
+	text-align: center;
+}
+
+.paticka__text {
+	color: darkmagenta;
+}
+
+.paticka__text--velky {
+	font-size: 18px;
+}
+
+.paticka__text--maly {
+	font-size: 12px;
+}
