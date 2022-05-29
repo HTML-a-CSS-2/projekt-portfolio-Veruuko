@@ -72,11 +72,17 @@ body {
 }
 
 .prehled {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   border-top: 1px solid grey;
+  gap: 30px;
   padding: 30px;
+}
+
+@media screen and (min-width: 640px) {
+  .prehled {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .prehled__obsah {
@@ -147,8 +153,18 @@ body {
 .prehled__foto {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  max-width: 160px;
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 160px;
+          flex: 0 0 160px;
   height: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .prehled__foto {
+    max-width: 160px;
+  }
 }
 
 .prehled--prohozeny {

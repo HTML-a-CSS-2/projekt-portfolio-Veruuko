@@ -25,7 +25,9 @@
 
 			<section class="hero">
 				<img
-					src="https://static.wixstatic.com/media/dc8d20_b7ffedad0e5f4463880c9d1860b27c89~mv2.jpg/v1/fill/w_1000,h_666,al_c,q_85,usm_0.66_1.00_0.01/dc8d20_b7ffedad0e5f4463880c9d1860b27c89~mv2.jpg"
+					src="./obrazky/hero-maly.jpeg"
+					srcset="./obrazky/hero.jpeg 1000w, ./obrazky/hero-maly.jpeg 500w"
+					sizes="(min-width: 1080px) 1080px, 100vw"
 					alt="Všechny naše šátky"
 					class="hero__obrazek"
 				/>
@@ -42,23 +44,28 @@
 						dítě. Mezi největší výhody nošení patří např.:
 					</p>
 					<ul class="prehled__seznam prehled__seznam--sikonama">
+						<!-- 3 SVG vloženy již dříve -->
 						<li>
 							<img
-								src="./pelvis.svg"
+								src="./obrazky/pelvis.svg"
 								alt="kyčle"
 								class="prehled__ikona"
 							/>správný vývoj kyčlí miminka
 						</li>
 						<li>
 							<img
-								src="./bricho.svg"
+								src="./obrazky/bricho.svg"
 								alt="plačící miminko"
 								class="prehled__ikona"
 							/>
 							zmírnění bolesti bříška při kolikách
 						</li>
 						<li>
-							<img src="./teplomer.svg" alt="teploměr" class="prehled__ikona" />
+							<img
+								src="./obrazky/teplomer.svg"
+								alt="teploměr"
+								class="prehled__ikona"
+							/>
 							zajištění správné teploty miminka
 						</li>
 					</ul>
@@ -67,11 +74,17 @@
 						<a href="" class="prehled__odkaz">tuto stránku.</a>
 					</p>
 				</div>
-				<img
-					src="https://static.wixstatic.com/media/dc8d20_156dd062762c4103b43e6d82af5acd24~mv2.jpg/v1/fill/w_444,h_666,al_c,q_85,usm_0.66_1.00_0.01/dc8d20_156dd062762c4103b43e6d82af5acd24~mv2.webp"
-					alt="Výhody nošení"
-					class="prehled__foto"
-				/>
+				<picture class="prehled__foto">
+					<source
+						srcset="./obrazky/prvni-maly.webp"
+						media="(min-width: 640px)"
+					/>
+					<img
+						class="prehled__foto"
+						src="./obrazky/prvni.webp"
+						alt="Výhody nošení"
+					/>
+				</picture>
 			</section>
 
 			<section class="prehled prehled--prohozeny">
@@ -90,11 +103,17 @@
 						<a href="" class="prehled__odkaz">tuto stránku.</a>
 					</p>
 				</div>
-				<img
-					src="https://static.wixstatic.com/media/dc8d20_6fe47b58337449afb8424adb4061adaa~mv2.jpg/v1/fill/w_1000,h_666,al_c,q_85,usm_0.66_1.00_0.01/dc8d20_6fe47b58337449afb8424adb4061adaa~mv2.webp"
-					alt="V čem nosit"
-					class="prehled__foto"
-				/>
+				<picture class="prehled__foto">
+					<source
+						srcset="./obrazky/druhy-maly.webp"
+						media="(min-width: 640px)"
+					/>
+					<img
+						class="prehled__foto"
+						src="./obrazky/druhy.webp"
+						alt="V čem nosit"
+					/>
+				</picture>
 			</section>
 
 			<section class="prehled">
@@ -114,11 +133,17 @@
 						<a href="" class="prehled__odkaz">na tuto stránku.</a>
 					</p>
 				</div>
-				<img
-					src="https://static.wixstatic.com/media/dc8d20_d0e2bc6e7e394866b7bff00af9b34049~mv2.jpg/v1/fill/w_945,h_629,al_c,q_85/dc8d20_d0e2bc6e7e394866b7bff00af9b34049~mv2.webp"
-					alt="naše výbava"
-					class="prehled__foto"
-				/>
+				<picture class="prehled__foto">
+					<source
+						srcset="./obrazky/treti-maly.webp"
+						media="(min-width: 640px)"
+					/>
+					<img
+						class="prehled__foto"
+						src="./obrazky/treti.webp"
+						alt="Naše výbava"
+					/>
+				</picture>
 			</section>
 
 			<footer class="paticka">

@@ -92,9 +92,13 @@ body {
 }
 
 .prehled {
-	display: flex;
 	border-top: 1px solid $barva-ramecku;
+	gap: $zakladni-odsazeni;
 	padding: $zakladni-odsazeni;
+
+	@media screen and (min-width: 640px) {
+		display: flex;
+	}
 }
 
 .prehled__obsah {
@@ -153,8 +157,14 @@ body {
 
 .prehled__foto {
 	align-self: flex-start;
-	max-width: $sirka-fotky;
+	display: block;
+	flex: 0 0 $sirka-fotky;
 	height: auto;
+	width: 100%;
+
+	@media screen and (min-width: 640px) {
+		max-width: $sirka-fotky;
+	}
 }
 
 .prehled--prohozeny {
