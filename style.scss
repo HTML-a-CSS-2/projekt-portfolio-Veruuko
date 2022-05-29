@@ -1,0 +1,242 @@
+$zakladni-odsazeni: 30px;
+$odsazeni-navigace: 5px;
+$barva-pozadi: #fff3f2;
+$barva-odkazu: salmon;
+$barva-nadpisu: sandybrown;
+$barva-titulku: palevioletred;
+$barva-prelivu: rgba(0, 0, 0, 0.2);
+$barva-ramecku: grey;
+$sirka-stranky: 1080px;
+$sirka-fotky: 160px;
+
+// mixin
+
+@mixin presSebe() {
+	grid-area: 1 / 1 / 1 / 1;
+}
+
+@mixin grid($align, $justify) {
+	align-items: $align;
+	display: grid;
+	justify-content: $justify;
+}
+
+@mixin preliv($padding) {
+	background-color: $barva-prelivu;
+	color: $barva-pozadi;
+	margin: 0;
+	padding: $padding;
+	text-shadow: 0px 0px 0px $barva-prelivu;
+}
+
+// styly
+
+body {
+	background-color: grey;
+}
+
+.stranka {
+	max-width: $sirka-stranky;
+	margin: auto;
+	background-color: $barva-pozadi;
+}
+
+.hlavicka {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&__titulek {
+		color: $barva-nadpisu;
+		margin-left: $zakladni-odsazeni;
+	}
+
+	&__polozka {
+		padding: $odsazeni-navigace;
+		margin: $odsazeni-navigace;
+		color: $barva-odkazu;
+		font-size: 20px;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&--aktivni {
+			text-decoration: underline;
+			color: $barva-odkazu;
+		}
+	}
+}
+
+.hero {
+	@include grid(start, center)
+}
+
+.hero__obrazek,
+.hero__text {
+	@include presSebe;
+}
+
+.hero__obrazek {
+	width: 100%;
+}
+
+.hero__text {
+	$odsazeni: 250px;
+
+	color: $barva-pozadi;
+	text-align: center;
+	margin: $odsazeni $odsazeni 0 $odsazeni;
+	font-size: 68px;
+}
+
+.prehled {
+	display: flex;
+	border-top: 1px solid $barva-ramecku;
+	padding: $zakladni-odsazeni;
+}
+
+.prehled__obsah {
+	flex: auto;
+}
+
+.prehled__titulek {
+	color: $barva-titulku;
+	font-size: 36px;
+	margin: 0 0 $zakladni-odsazeni 0;
+}
+
+.prehled__titulek--vyhody {
+	text-decoration: underline;
+}
+
+.prehled__titulek--vcem {
+	text-decoration-line: overline;
+}
+
+.prehled__titulek--vybava {
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+.prehled__text {
+	margin: (2 * $zakladni-odsazeni) 0 $zakladni-odsazeni 0;
+}
+
+.prehled__seznam {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0 0 $zakladni-odsazeni 0;
+}
+
+.prehled__seznam--sikonama {
+	list-style-type: none;
+}
+
+.prehled__seznam--ctverecky {
+	list-style-type: square;
+}
+
+.prehled__seznam--podsebou {
+	flex-direction: column;
+}
+
+.prehled__odkaz {
+	color: $barva-odkazu;
+	text-decoration: none;
+}
+
+.prehled__odkaz:hover {
+	text-decoration: underline;
+}
+
+.prehled__foto {
+	align-self: flex-start;
+	max-width: $sirka-fotky;
+	height: auto;
+}
+
+.prehled--prohozeny {
+	flex-direction: row-reverse;
+	gap: $zakladni-odsazeni;
+}
+
+.prehled__ikona {
+	max-width: 30px;
+	margin-right: $zakladni-odsazeni / 3;
+	vertical-align: middle;
+}
+
+.paticka {
+	border-top: 1px solid grey;
+	text-align: center;
+}
+
+.paticka__text {
+	color: darkmagenta;
+}
+
+.paticka__text--velky {
+	font-size: 18px;
+}
+
+.paticka__text--maly {
+	font-size: 12px;
+}
+
+.seznam-satku {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($sirka-fotky, 1fr));
+	grid-auto-flow: dense;
+	gap: 1px;
+	padding: 0;
+}
+
+.seznam-satku__satek {
+	@include grid(center, stretch);
+
+	aspect-ratio: 4 / 3;
+	grid-column: span 2;
+	transition: transform 300ms ease-in-out;
+}
+
+.seznam-satku__satek--vertikalni {
+	@include grid(center, center);
+
+	aspect-ratio: 3 / 4;
+	grid-column: span 1;
+}
+
+.seznam-satku__satek:hover {
+	transform: scale(1.1);
+}
+
+.seznam-satku__fotka,
+.seznam-satku__nazev,
+.seznam-satku__vyrobce {
+	@include presSebe;
+}
+
+.seznam-satku__fotka {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.seznam-satku__nazev {
+	@include preliv($zakladni-odsazeni / 2);
+
+	align-self: start;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.seznam-satku__vyrobce {
+	@include preliv(5px);
+
+	align-self: end;
+	font-size: 14px;
+	font-weight: 400;
+	justify-self: end;
+}
